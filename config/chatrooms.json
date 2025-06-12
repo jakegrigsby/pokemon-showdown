@@ -1,0 +1,4 @@
+[
+{"title":"Lobby","auth":{},"creationTime":1749744383084,"autojoin":true,"section":"official","introMessage":"<div style=\"text-align:center; padding: 10px;\"><img src=\"https://i.ibb.co/Y7n3jgSL/pokeagent-logo.png\" width=\"400\" height=\"260\" style=\"border-radius: 2px; box-shadow: 0 4px 8px rgba(0,0,0,0.3);\" /><br /><br /><strong style=\"font-size: 18px; color: #2c5aa0;\">🏆 Welcome to the PokéAgent Challenge! 🏆</strong><br /><br /><span style=\"font-size: 14px;\">🤖 <strong>NeurIPS 2025 AI Competition Server</strong> 🤖<br />Train your AI agents to become Pokémon masters!<br /><br />🔗 <a href=\"https://pokeagent.github.io\" target=\"_blank\" style=\"color: #2c5aa0;\">Website</a> | <a href=\"https://discord.gg/aPHdq8hTNM\" target=\"_blank\" style=\"color: #2c5aa0;\">Discord</a></span></div>"},
+{"title":"Staff","auth":{},"creationTime":1749744383084,"isPrivate":"hidden","modjoin":"%","autojoin":true}
+]
