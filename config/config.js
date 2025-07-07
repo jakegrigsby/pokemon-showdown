@@ -231,7 +231,7 @@ exports.allowrequestingties = true;
  *   This feature can lag larger servers - turn this off if your server is
  *   getting more than 80 or so users.
  */
-exports.reportjoins = true;
+exports.reportjoins = false; // Reduce spam from AI agents connecting/disconnecting
 
 /**
  * report joins and leaves periodically - sends silent join and leave messages in batches
@@ -239,7 +239,7 @@ exports.reportjoins = true;
  *   only be able to see the messages if they have the /showjoins client-side setting enabled.
  *   Set this to a positive amount of milliseconds if you want to enable this feature.
  */
-exports.reportjoinsperiod = 0;
+exports.reportjoinsperiod = 30000; // Report joins every 30 seconds instead
 
 /**
  * report battles - shows messages like "OU battle started" in the lobby
@@ -247,7 +247,7 @@ exports.reportjoinsperiod = 0;
  *   getting more than 160 or so users.
  *  @type {boolean | string[] | string}
  */
-exports.reportbattles = true;
+exports.reportbattles = true; // Show battle announcements
 
 /**
  * report joins and leaves in battle - shows messages like "<USERNAME> joined" in battle
@@ -267,7 +267,7 @@ exports.monitorminpunishments = 3;
 /**
  * Turns off all time-based throttles - rename, challenges, laddering, etc.
  */
-exports.nothrottle = false;
+exports.nothrottle = false; // Keep some throttling for stability
 
 /**
  * Removes all ip-based alt checking.
@@ -342,7 +342,7 @@ exports.laddermodchat = false;
  *
  * @type {boolean}
  */
-exports.forcetimer = false;
+exports.forcetimer = true;
 
 /**
  * force register ELO - unregistered users cannot search for ladder battles
@@ -393,7 +393,7 @@ exports.logchat = false;
 /**
  * logchallenges - whether to log challenge battles. Useful for tournament servers.
  */
-exports.logchallenges = false;
+exports.logchallenges = true; // Important for tracking AI battles
 
 /**
  * loguserstats - how often (in milliseconds) to write user stats to the
@@ -442,11 +442,11 @@ exports.noguestsecurity = false;
  * tourdefaultplayercap - a set cap of how many players can be in a tournament
  * ratedtours - toggles tournaments being ladder rated (true) or not (false)
  */
-exports.tourroom = '';
+exports.tourroom = 'tournaments';
 /** @type {string[]} */
-exports.tourannouncements = [/* roomids */];
-exports.tourdefaultplayercap = 0;
-exports.ratedtours = false;
+exports.tourannouncements = ['lobby', 'tournaments'];
+exports.tourdefaultplayercap = 32; // Good size for AI competitions
+exports.ratedtours = true; // Enable rated tournaments for leaderboards
 
 /**
  * appealurl - specify a URL containing information on how users can appeal
@@ -485,7 +485,12 @@ exports.forcedpublicprefixes = [];
  * startuphook - function to call when the server is fully initialized and ready
  * to serve requests.
  */
-exports.startuphook = function () {};
+exports.startuphook = function () {
+	console.log('🤖 PokéAgent Challenge Server Started! 🏆');
+	console.log('NeurIPS 2025 AI Competition Server');
+	console.log('Server URL: pokeagentshowdown.com.psim.us');
+	console.log('Ready for AI trainers!');
+};
 
 /**
  * lastfmkey - the API key to let users use the last.fm commands from The Studio's
@@ -746,3 +751,24 @@ exports.grouplist = [
 		punishgroup: 'MUTE',
 	},
 ];
+
+/**
+ * Server identification and branding for PokéAgent Challenge
+ */
+exports.serverid = 'pokeagent';
+exports.servername = 'PokéAgent Challenge - NeurIPS 2025';
+
+/**
+ * Welcome message for new users
+ */
+exports.welcomemessage = `Welcome to the PokéAgent Challenge! This is the official server for the NeurIPS 2025 AI Competition. Train your AI agents to become Pokémon masters!`;
+
+/**
+ * MOTD (Message of the Day) for the lobby
+ */
+exports.motd = `🤖 **PokéAgent Challenge - NeurIPS 2025** 🏆\n\nWelcome to the official competition server! Here you can:\n• Test your AI agents against other competitors\n• Practice battles in various formats\n• Join tournaments and events\n\n📚 **Resources:**\n• Competition Website: [Link]\n• Discord: [Link]\n• Documentation: [Link]\n\n🎯 **Current Focus:** Gen 1 OU format for the main competition\n\nGood luck, trainers! 🚀`;
+
+/**
+ * Server description for the server list
+ */
+exports.serverdesc = 'Official server for the NeurIPS 2025 PokéAgent Challenge - AI Pokemon competition';
